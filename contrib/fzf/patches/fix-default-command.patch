@@ -1,0 +1,28 @@
+* find: -fstype option unsupported.
+  see https://github.com/chimera-linux/chimerautils/issues/1
+* replace bash with sh to launch default command
+
+--- a/src/constants.go
++++ b/src/constants.go
+@@ -58,7 +58,7 @@
+ 
+ func init() {
+ 	if !util.IsWindows() {
+-		defaultCommand = `set -o pipefail; command find -L . -mindepth 1 \( -path '*/\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \) -prune -o -type f -print -o -type l -print 2> /dev/null | cut -b3-`
++		defaultCommand = `set -o pipefail; command find -L . -mindepth 1 -path '*/\.*' -prune -o -type f -print -o -type l -print 2> /dev/null | cut -b3-`
+ 	} else if os.Getenv("TERM") == "cygwin" {
+ 		defaultCommand = `sh -c "command find -L . -mindepth 1 -path '*/\.*' -prune -o -type f -print -o -type l -print 2> /dev/null | cut -b3-"`
+ 	}
+--- a/src/reader.go
++++ b/src/reader.go
+@@ -98,8 +98,8 @@
+ 	r.startEventPoller()
+ 	var success bool
+ 	if util.IsTty() {
+-		// The default command for *nix requires bash
+-		shell := "bash"
++		// The default command for *nix requires sh
++		shell := "sh"
+ 		cmd := os.Getenv("FZF_DEFAULT_COMMAND")
+ 		if len(cmd) == 0 {
+ 			if defaultCommand != "" {
