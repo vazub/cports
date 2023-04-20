@@ -1,0 +1,14 @@
+diff --git a/res/dinit-service b/res/dinit-service
+index 7d93219..e532d98 100644
+--- a/res/dinit-service
++++ b/res/dinit-service
+@@ -1,7 +1,5 @@
+ type = process
+-command = /etc/dinit.d/scripts/emptty
++command = /usr/bin/emptty -d
+ restart = true
+ smooth-recovery = true
+-depends-on = logind
+-waits-for = loginready
+-waits-for = rclocal
++depends-on = elogind
