@@ -1,0 +1,68 @@
+diff --git a/data/keymaps/i386/include/linux-keys-bare.inc b/data/keymaps/i386/include/linux-keys-bare.inc
+index 64a4ee9..f26b4dc 100644
+--- a/data/keymaps/i386/include/linux-keys-bare.inc
++++ b/data/keymaps/i386/include/linux-keys-bare.inc
+@@ -75,6 +75,18 @@ alt keycode  67 = Console_9
+ alt keycode  68 = Console_10
+ alt keycode  87 = Console_11
+ alt keycode  88 = Console_12
++altgr keycode  59 = Console_1
++altgr keycode  60 = Console_2
++altgr keycode  61 = Console_3
++altgr keycode  62 = Console_4
++altgr keycode  63 = Console_5
++altgr keycode  64 = Console_6
++altgr keycode  65 = Console_7
++altgr keycode  66 = Console_8
++altgr keycode  67 = Console_9
++altgr keycode  68 = Console_10
++altgr keycode  69 = Console_11
++altgr keycode  70 = Console_12
+ control alt keycode  59 = Console_1
+ control alt keycode  60 = Console_2
+ control alt keycode  61 = Console_3
+@@ -87,7 +99,18 @@ control alt keycode  67 = Console_9
+ control alt keycode  68 = Console_10
+ control alt keycode  87 = Console_11
+ control alt keycode  88 = Console_12
+-
++control altgr keycode  59 = Console_1
++control altgr keycode  60 = Console_2
++control altgr keycode  61 = Console_3
++control altgr keycode  62 = Console_4
++control altgr keycode  63 = Console_5
++control altgr keycode  64 = Console_6
++control altgr keycode  65 = Console_7
++control altgr keycode  66 = Console_8
++control altgr keycode  67 = Console_9
++control altgr keycode  68 = Console_10
++control altgr keycode  69 = Console_11
++control altgr keycode  70 = Console_12
+ #
+ # Keypad keys
+ #
+@@ -132,6 +155,9 @@ keycode 108 = Down
+ alt keycode 103 = KeyboardSignal
+ alt keycode 105 = Decr_Console
+ alt keycode 106 = Incr_Console
++altgr keycode 103 = KeyboardSignal
++altgr keycode 105 = Decr_Console
++altgr keycode 106 = Incr_Console
+ #
+ # The six edit keys
+ #
+@@ -151,12 +177,14 @@ keycode  84 = Last_Console		# Alt+SysRq/PrintScrn
+ #keycode  99 = VoidSymbol		# SysRq/PrintScrn
+ keycode  99 = Compose			# SysRq/PrintScrn
+ alt	keycode  99 = Control_backslash
++altgr	keycode	 99 = Control_backslash
+ control	keycode  99 = Control_backslash
+ 
+ plain   keycode  70 = Scroll_Lock
+ shift	keycode  70 = Show_Memory
+ control keycode  70 = Show_State
+ alt	keycode  70 = Show_Registers
++altgr	keycode  70 = Show_Registers
+ 
+ keycode 101 = Break			# Ctrl+Break/Pause
+ keycode 119 = Pause			# Break/Pause
