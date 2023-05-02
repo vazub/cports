@@ -20,8 +20,6 @@ class Golang:
         self.wrksrc = wrksrc
         self.env = env
         self.jobs = jobs
-        # -dbg packages fail to be generated
-        tmpl.options["debug"] = False
 
     def _invoke(
         self, command = None, args = [], jobs = None, offline = True,
@@ -99,7 +97,7 @@ class Golang:
         return self._invoke("install", myargs, jobs, True, None, env, wrksrc)
 
     def check(self):
-        myargs = ["-v"]
+        myargs = []
 
         tags = self.template.go_check_tags
         if tags:
